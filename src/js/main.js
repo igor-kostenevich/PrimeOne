@@ -28,13 +28,6 @@ $('.header-menu__icon').click(function(event) {
 	}
 });
 
-//ZOOM
-if($('.gallery').length>0){
-	baguetteBox.run('.gallery', {
-		// Custom options
-	});
-}
-
 
 //POPUP
 $('.pl').click(function(event) {

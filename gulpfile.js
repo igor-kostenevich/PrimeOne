@@ -9,6 +9,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 // const less = require('gulp-less');
 const imagemin = require('gulp-imagemin');
+const plugin = require('gulp-load-plugins')();
+plugin.imagemin.mozjpeg = require('imagemin-mozjpeg');
+plugin.imagemin.pngquant = require('imagemin-pngquant');
 
 const styleFiles = [
     './src/scss/main.scss'
@@ -19,7 +22,8 @@ const scriptsFiles = [
     './src/js/forms.js',
     './src/js/map.js',
     './src/js/responsive.js',
-    './src/js/scroll.js'
+    './src/js/scroll.js',
+    './src/js/map.js'
 ]
 
 const scriptLibs = [
@@ -29,36 +33,28 @@ const scriptLibs = [
 ]
 
 gulp.task('styles', () => {
-    //Шаблон для поиска файлов стилей
     return gulp.src(styleFiles)
     .pipe(sourcemaps.init())
     .pipe(sass())
-    //объединение файлов в один
     .pipe(concat('style.css'))
-    //Автопрефиксы для посл 2 версий браузеров
     .pipe(autoprefixer({
         overrideBrowserslist: ['last 5 versions'],
         cascade: false
     }))
-    //Минификация
     .pipe(cleanCSS({
         level: 2
     }))
     .pipe(sourcemaps.write('./'))
-    //Выходная папка для стилей
     .pipe(gulp.dest('./build/css'))
     .pipe(browsersSync.stream());
 });
 
 gulp.task('scripts', () => {
     return gulp.src(scriptsFiles)
-    //объединение файлов в один
      .pipe(concat('script.js'))
-    //uglify
      .pipe(uglify({
         toplevel: true
         }))
-    //Выходная папка для js
     .pipe(gulp.dest('./build/js'))
     .pipe(browsersSync.stream());
 });
@@ -70,18 +66,23 @@ gulp.task('scriptsLibs', () => {
     .pipe(browsersSync.stream());
 });
 
-//Удаление 
 gulp.task('del', () => {
     return del(['build/*'])
 });
 
 gulp.task('img-compress', () => {
-    return gulp.src('./src/img/**')
-    .pipe(imagemin({
-        proggressive: true
-    }))
-    .pipe(gulp.dest('./build/img/'))
-})
+     return gulp.src('./src/img/**')
+      .pipe(plugin.imagemin([
+            plugin.imagemin.gifsicle({interlaced: true}),
+            plugin.imagemin.jpegtran({progressive: true}),
+            plugin.imagemin.mozjpeg({progressive: true}),
+            plugin.imagemin.optipng({optimizationLevel: 7}),
+            plugin.imagemin.pngquant({quality: [0.3, 0.5]}),
+            // plugin.imagemin.svgo({plugins: [{removeViewBox: true}]})
+          ]))
+        .pipe(gulp.dest('./build/img/'))
+        .pipe(browsersSync.stream());
+});
 
 gulp.task('watch', () => {
     browsersSync.init({
@@ -90,7 +91,6 @@ gulp.task('watch', () => {
         }
     });
     gulp.watch('./src/img/**', gulp.series('img-compress'))
-    //Отслеживание
     // gulp.watch('./src/css/**/*.css', styles)
     gulp.watch('./src/scss/**/*.scss', gulp.series('styles'))
     gulp.watch('./src/scss/**/*.sass', gulp.series('styles'))

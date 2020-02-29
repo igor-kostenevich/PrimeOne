@@ -77,13 +77,21 @@ input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:n
 	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
+	padding: 0px 18px;
+	border: 2px solid $input-color;
+	background: $input-bg-color;
+	height: 50px;
+	color: $input-color;
+	font-size: 15px;
 	&.focus{}
-	&.err{}
+	&.err{
+		border: 2px solid red;
+	}
 }
 textarea.input{
 	resize:none;
-	padding: 0px 0px;
+	padding: 10px 018px;
+	height: 100px;
 }
 //</INPUT>====================================================================================================
 
