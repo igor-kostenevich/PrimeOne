@@ -99,16 +99,14 @@ $(document).on('keydown',function(e) {
 	}
 });
 
-$('.goto').click(function() {
-		var el=$(this).attr('href').replace('#','');
-		var offset=0;
-	$('body,html').animate({scrollTop:$('.'+el).offset().top+offset},500, function() {});
 
-	if($('.header-menu').hasClass('active')){
-		$('.header-menu,.header-menu__icon').removeClass('active');
-		$('body').removeClass('lock');
-	}
-	return false;
+$(function(){
+	$('.lazy').Lazy({
+		afterLoad: function(element){
+			element.parent().addClass('ibg');
+			ibg();
+		}
+	});
 });
 
 function ibg(){
@@ -119,24 +117,18 @@ function ibg(){
 	});
 }
 ibg();
-	
-//Клик вне области
-$(document).on('click touchstart',function(e) {
-	if (!$(e.target).is(".select *")) {
-		$('.select').removeClass('active');
-	};
-});
 
-//UP
-$(window).scroll(function() {
-		var w=$(window).width();
-	if($(window).scrollTop()>50){
-		$('#up').fadeIn(300);
-	}else{
-		$('#up').fadeOut(300);
-	}
-});
 $('#up').click(function(event) {
 	$('body,html').animate({scrollTop:0},300);
 });
+
+$('.header-top-lang__item').on('click', function(e){
+	e.preventDefault();
+	$(".header-top-lang__item").removeClass('active');
+	$(this).addClass('active');
+});
+
+
+
+		
 

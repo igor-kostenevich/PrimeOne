@@ -1,0 +1,71 @@
+@import "_variables";
+@import "_mixins";
+
+//<FORM>====================================================================================================
+.form-row{@include flexbox();margin: 0px -15px;}
+.form__column{padding: 0px 15px;}
+
+//</FORM>====================================================================================================
+
+//<BUTTONS>====================================================================================================
+.btn{
+	display: inline-block;
+	height: 50px;
+	padding: 0px 33px;
+	background-color: $primary-dark-color;
+	color: $primary-light-color;
+	background-color: #000;
+	font-size: 15px;
+	line-height: 50px;
+	font-family: 'Bebas';
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	&_light {
+		color: $primary-dark-color;
+		background-color: $primary-light-color;
+	}
+
+	&:hover{}
+	&.fw{width: 100%;}
+}
+//</BUTTONS>====================================================================================================
+
+
+//<INPUT>====================================================================================================
+input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+.input{
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0px 18px;
+	border: 2px solid $input-color;
+	background: $input-bg-color;
+	height: 50px;
+	color: $input-color;
+	font-size: 15px;
+	&.focus{}
+	&.err{
+		border: 2px solid red;
+	}
+}
+textarea.input{
+	resize:none;
+	padding: 10px 018px;
+	height: 100px;
+}
+//</INPUT>====================================================================================================
+
+
+//<QUANTITY>====================================================================================================
+.quantity {position: relative;width: 73px;height: 47px;border: 1px solid #cfcfcf;background-color: #ffffff;}
+.quantity__input {height: 45px;width: 50px;text-align: center;color: #101010;font-weight: 300;}
+.quantity__btn {position: absolute;top: 11px;right: 15px;cursor: pointer;
+	&:before{font-size: 25px;display: inline-block;line-height: 10px;color: #a9a9a9;}
+	&:hover{
+		&:before{color: #da0005;}
+	}
+	&.up {}
+	&.dwn {top: 25px;}
+}
+//</QUANTITY>====================================================================================================
+

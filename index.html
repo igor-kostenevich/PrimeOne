@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./build/css/style.css">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="./build/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- <meta name="robots" content="noindex, nofollow" /> -->
     <meta name="format-detection" content="telephone=no">
@@ -65,7 +65,7 @@
             <div class="catering">
                 <div class="catering__column">
                     <div class="catering__image ibg">
-                        <img src="./build/img/bg-block-catering.jpg" alt="background image">
+                        <img src="./build/img/bg-block-catering.jpg" class="lazyload" alt="background image">
                     </div>
                 </div>
                 <div class="catering__column">
@@ -75,8 +75,8 @@
                             <div class="catering-body__text">Treat your guests to a beautifully plated dinner,
                                 hand-crafted canapes or a casual BBQ.</div>
                             <div class="catering-body-buttons">
-                                <a href="" class="catering-body-buttons__btn btn btn_light">Get a quote</a>
-                                <a href="" class="catering-body-buttons__link">View menus</a>
+                                <a href="#get-quote" class="catering-body-buttons__btn btn btn_light pl">Get a quote</a>
+                                <a href="#" class="catering-body-buttons__link">View menus</a>
                             </div>
                         </div>
                     </div>
@@ -89,46 +89,50 @@
                     <div class="products-body">
                         <div class="products__column">
                             <div class="products-item">
-                                <div class="products-item__image ibg"><img src="./build/img/products-01.jpg" alt="">
+                                <div class="products-item__image">
+                                    <img class="lazy" data-src="./build/img/products-01.jpg" alt="products">
                                 </div>
                                 <div class="products-item__title">Corporate catering</div>
                                 <div class="products-item__text">We are able to serve events from 2 to 2000 guests and
                                     always reasonable prices.</div>
-                                <p><a class="products-item__btn btn">Get a quote</a></p>
-                                <p><a class="products-item__link">View menus</a></p>
+                                <p><a href="#get-quote" class="products-item__btn btn pl">Get a quote</a></p>
+                                <p><a href="#" class="products-item__link">View menus</a></p>
                             </div>
                         </div>
                         <div class="products__column">
                             <div class="products-item">
-                                <div class="products-item__image ibg"><img src="./build/img/products-02.jpg" alt="">
+                                <div class="products-item__image">
+                                    <img class="lazy" data-src="./build/img/products-02.jpg" alt="products">
                                 </div>
                                 <div class="products-item__title">Private catering</div>
                                 <div class="products-item__text">Fresh, seasonal and simple cuisine. Food is our
                                     business and our passion.</div>
-                                <p><a class="products-item__btn btn">Get a quote</a></p>
-                                <p><a class="products-item__link">View menus</a></p>
+                                <p><a href="#get-quote" class="products-item__btn btn pl">Get a quote</a></p>
+                                <p><a href="#" class="products-item__link">View menus</a></p>
                             </div>
                         </div>
                         <div class="products__column">
                             <div class="products-item">
-                                <div class="products-item__image ibg"><img src="./build/img/products-03.jpg" alt="">
+                                <div class="products-item__image">
+                                    <img class="lazy" data-src="./build/img/products-03.jpg" alt="products">
                                 </div>
                                 <div class="products-item__title">Wedding catering</div>
                                 <div class="products-item__text">We use only the best organic ingredients and gluten and
                                     dairy free cooking.</div>
-                                <p><a class="products-item__btn btn">Get a quote</a></p>
-                                <p><a class="products-item__link">View menus</a></p>
+                                <p><a href="#get-quote" class="products-item__btn btn pl">Get a quote</a></p>
+                                <p><a href="#" class="products-item__link">View menus</a></p>
                             </div>
                         </div>
                         <div class="products__column">
                             <div class="products-item">
-                                <div class="products-item__image ibg"><img src="./build/img/products-04.jpg" alt="">
+                                <div class="products-item__image">
+                                    <img class="lazy" data-src="./build/img/products-04.jpg" alt="products">
                                 </div>
                                 <div class="products-item__title">Online Ordering</div>
                                 <div class="products-item__text">Successful catering is about organisation, high quality
                                     service, and great food.</div>
-                                <p><a class="products-item__btn btn">Get a quote</a></p>
-                                <p><a class="products-item__link">View menus</a></p>
+                                <p><a href="#get-quote" class="products-item__btn btn pl">Get a quote</a></p>
+                                <p><a href="#" class="products-item__link">View menus</a></p>
                             </div>
                         </div>
                     </div>
@@ -210,13 +214,14 @@
                                     NY 11104</div>
                             </div>
                             <div class="contacts-body__column">
-                                <a href="mailto:contact@primeone.com" class="contacts-body__item contacts-body__item--email">contact@primeone.com</a>
+                                <a href="mailto:contact@primeone.com"
+                                    class="contacts-body__item contacts-body__item--email">contact@primeone.com</a>
                             </div>
                             <div class="contacts-body__column">
                                 <a href="tel:7187777777" class="contacts-body__item contacts-body__item--tel">(718)
                                     777-7777</a>
                             </div>
-                            
+
                             <div class="contacts-body__column">
                                 <div class="contacts-social">
                                     <div class="contacts-social__item ">
@@ -243,7 +248,8 @@
                                     <div class="contacts-social__item">
                                         <a href="#">
                                             <svg class="social-icon social-icon--google">
-                                                <use xlink:href="./build/img/social-sprite.svg#social-google-plus"></use>
+                                                <use xlink:href="./build/img/social-sprite.svg#social-google-plus">
+                                                </use>
                                             </svg>
                                         </a>
                                     </div>
@@ -265,8 +271,8 @@
                                             class="input req" />
                                     </div>
                                     <div class="contacts-content-form-line">
-                                        <input autocomplete="off" type="text" name="form[]" data-value="E-mail or phone number"
-                                            class="input req" />
+                                        <input autocomplete="off" type="text" name="form[]"
+                                            data-value="E-mail or phone number" class="input req" />
                                     </div>
                                     <div class="contacts-content-form-line">
                                         <textarea autocomplete="off" name="form[]" data-value="Your message"
@@ -288,7 +294,8 @@
             <div class="container">
                 <div class="footer-body">
                     <div class="footer-body__column">
-                        <div class="footer__text">© PrimeOne Catering 2014. <a href="" target="_blank">Terms & Conditions</a></div>
+                        <div class="footer__text">© PrimeOne Catering 2014. <a href="" target="_blank">Terms &
+                                Conditions</a></div>
                     </div>
                     <div class="footer-body__column">
                         <a href="" class="footer__logo">
@@ -300,43 +307,44 @@
         </footer>
     </div>
 
+    <div class="goto"></div>
+
     <!-- POPUP START -->
-    <!-- <div class="popup popup-callback">
+    <div class="popup popup-get-quote">
         <div class="popup-table table">
             <div class="cell">
                 <div class="popup-content">
                     <div class="popup-close"></div>
-                    <div class="popup__title">Привет!</div>
-                    <div class="popup__txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam sit
-                        repudiandae, maiores numquam perferendis minima architecto culpa rerum placeat. Delectus qui
-                        fugit beatae blanditiis tempora deserunt numquam reiciendis velit! Temporibus.</div>
-                    <form action="#" class="popup-form form">
-                        <div class="form-input">
-                            <input autocomplete="off" type="text" name="form[]" data-value="Телефон" class="input" />
+                    <form action="#" class="contacts-content-form-body">
+                        <div class="contacts-content-form-line">
+                            <input autocomplete="off" type="text" name="form[]" data-value="Name"
+                                class="input req" />
                         </div>
-                        <div class="form-input">
-                            <input autocomplete="off" type="text" name="form[]" data-value="Имя"
-                                class="input req email" />
+                        <div class="contacts-content-form-line">
+                            <input autocomplete="off" type="text" name="form[]" data-value="E-mail or phone number"
+                                class="input req" />
                         </div>
-                        <div class="form-input">
-                            <input autocomplete="off" type="text" name="form[]" data-value="Міло" class="input req" />
+                        <div class="contacts-content-form-line">
+                            <textarea autocomplete="off" name="form[]" data-value="Your message"
+                                class="input req"></textarea>
                         </div>
-                        <div class="form-button">
-                            <button type="submit" class="form__btn btn fw">Нажми</button>
+                         <div class="contacts-content-form-button">
+                            <button type="submit" class="contacts-content-form-btn btn btn_dark">Send
+                                message</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div> 
     <!-- POPUP END -->
+
 
     <script src="./build/js/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="./build/js/jquery.nicescroll.min.js"></script>
     <script src="https://maps.google.com/maps/api/js?sensor=false&amp;key="></script>
-    <script src="./build/js/jquery.inputmask.bundle.min.js"></script>
+    <script src="./build/js/jquery.lazy.min.js"></script>
     <script src="./build/js/script.js"></script>
 </body>
-
 </html>

@@ -22,14 +22,13 @@ const scriptsFiles = [
     './src/js/forms.js',
     './src/js/map.js',
     './src/js/responsive.js',
-    './src/js/scroll.js',
-    './src/js/map.js'
+    './src/js/scroll.js'
 ]
 
 const scriptLibs = [
     './src/js/jquery-3.4.1.min.js',
     './src/js/jquery.nicescroll.min.js',
-    './src/js/jquery.inputmask.bundle.min.js'
+    './src/js/jquery.lazy.min.js'
 ]
 
 gulp.task('styles', () => {

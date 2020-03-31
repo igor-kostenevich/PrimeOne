@@ -1,36 +1,37 @@
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "ui";
-@import "forms";
+@import "_variables";
+@import "_mixins";
+@import "_reset";
+@import "_ui";
+@import "_forms";
+@import "_popup";
 
 
 //<Подключаем шрифты>=======================================================================================
 @font-face {
 	font-family: 'PTSans';
+	font-display: swap;
 	src: url('../../fonts/PTSans-Regular.eot');
 	src: local('☺'), url('../../fonts/PTSans-Regular.woff') format('woff'), url('../../fonts/PTSans-Regular.ttf') format('truetype'), url('../../fonts/PTSans-Regular.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Bebas';
+	font-display: swap;
 	src: url('../../fonts/BebasNeue-Regular.eot');
 	src: local('☺'), url('../../fonts/BebasNeue-Regular.woff') format('woff'), url('../../fonts/BebasNeue-Regular.ttf') format('truetype'), url('../../fonts/BebasNeue-Regular.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Akzidenz';
+	font-display: swap;
 	src: url('../../fonts/AkzidenzGroteskBQ-BdCnd.eot');
 	src: local('☺'), url('../../fonts/AkzidenzGroteskBQ-BdCnd.woff') format('woff'), url('../../fonts/AkzidenzGroteskBQ-BdCnd.ttf') format('truetype'), url('../../fonts/AkzidenzGroteskBQ-BdCnd.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
 }
 
 
@@ -197,6 +198,26 @@ $bgc-advantage: #ebebeb;
 	font-size: 15px;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
+	position: relative;
+	padding: 2px 0; 
+
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: #000;
+		height: 2px;
+		transition: .3s;
+		width: 0%;
+	}
+
+	&:hover:before {
+		width: 100%;
+		left: 0;
+	}
+
 
 	@media (max-width: $md2+px) {
 		line-height: 24px;
@@ -465,6 +486,9 @@ $bgc-advantage: #ebebeb;
 	height: 100%;
 	@include flexbox();
 	flex-direction: column;
+	p {
+		cursor: pointer;
+	}
 }
 
 .products-item__image {
@@ -733,7 +757,7 @@ $bgc-advantage: #ebebeb;
 .contacts-content-form-line {
 	margin: 0px 0px 25px 0px;
 }
-.input {}
+
 .contacts-content-form-button {}
 .contacts-content-form-btn {}
 

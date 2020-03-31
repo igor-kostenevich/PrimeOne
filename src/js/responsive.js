@@ -40,3 +40,5 @@ function adaptive_function() {
 	adaptive_header(w,h);
 }
 	adaptive_function();
+
+
